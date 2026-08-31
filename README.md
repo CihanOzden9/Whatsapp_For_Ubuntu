@@ -6,6 +6,12 @@ yamaları dağıtım güncellemeleriyle gelir, uygulamayla birlikte paketlenmez.
 
 ![platform](https://img.shields.io/badge/platform-Linux-blue)
 ![tauri](https://img.shields.io/badge/Tauri-v2-24C8DB)
+![license](https://img.shields.io/badge/license-MIT-green)
+
+Depo: [github.com/CihanOzden9/Whatsapp_For_Ubuntu](https://github.com/CihanOzden9/Whatsapp_For_Ubuntu)
+
+Ubuntu üzerinde geliştirildi ve test edildi; WebKitGTK 4.1 bulunan her
+Linux dağıtımında çalışır.
 
 ---
 
@@ -14,8 +20,8 @@ yamaları dağıtım güncellemeleriyle gelir, uygulamayla birlikte paketlenmez.
 Tek seferlik:
 
 ```bash
-git clone <repo-adresi>
-cd Whatsapp_For_Linux
+git clone https://github.com/CihanOzden9/Whatsapp_For_Ubuntu.git
+cd Whatsapp_For_Ubuntu
 ./scripts/install.sh
 ```
 
