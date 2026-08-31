@@ -164,5 +164,4 @@ scripts/dev-clean.sh               snap ortam kirliliğine karşı geliştirme b
 
 ## Lisans
 
-Henüz belirlenmedi. GitHub'da paylaşmadan önce bir `LICENSE` dosyası ekle
-(MIT yaygın tercih).
+[MIT](LICENSE) — Copyright (c) 2026 Cihan
