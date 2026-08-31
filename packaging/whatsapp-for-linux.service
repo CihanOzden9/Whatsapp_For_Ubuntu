@@ -1,0 +1,38 @@
+# ~/.config/systemd/user/whatsapp-for-linux.service olarak kopyala:
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now whatsapp-for-linux
+#   (.deb ile kurduysan yolu /usr/bin/whatsapp-for-linux yap)
+[Unit]
+Description=WhatsApp for Linux (arkaplan)
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/whatsapp
+Restart=on-failure
+RestartSec=5
+
+# --- sertlestirme ---
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+ProtectProc=invisible
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+RestrictNamespaces=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=no
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+# Ev dizini salt-okunur; sadece kendi oturum verisine yazabilsin.
+ProtectHome=read-only
+ReadWritePaths=%h/.local/share/dev.cedric.whatsapp-for-linux
+ReadWritePaths=%h/.cache/dev.cedric.whatsapp-for-linux
+
+[Install]
+WantedBy=graphical-session.target

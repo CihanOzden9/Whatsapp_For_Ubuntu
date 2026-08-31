@@ -1,0 +1,36 @@
+[package]
+name = "whatsapp-for-linux"
+version = "0.1.0"
+description = "WhatsApp Web masaüstü kabuğu"
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "app_lib"
+crate-type = ["lib"]
+
+[[bin]]
+name = "whatsapp-for-linux"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-opener = "2"
+
+# Linux'ta WebKitGTK'ya doğrudan erişim: izin (permission) filtresi ve
+# yeni-pencere isteklerinin engellenmesi icin gerekli.
+# Surumler Tauri/wry'nin kullandigi gtk-rs surumleriyle ayni olmali.
+[target.'cfg(target_os = "linux")'.dependencies]
+webkit2gtk = { version = "2.0", features = ["v2_38"] }
+libc = "0.2"
+gtk = "0.18"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

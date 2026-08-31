@@ -1,0 +1,24 @@
+# --- Node ---
+node_modules/
+npm-debug.log*
+.npm/
+
+# --- Rust / Tauri ---
+src-tauri/target/
+src-tauri/gen/
+dist/
+
+# --- Derleme ciktilari ---
+*.deb
+*.AppImage
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# --- Yerel ortam ---
+.env
+.env.local

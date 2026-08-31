@@ -1,0 +1,16 @@
+# systemd yerine basit otomatik baslatma isteyenler icin.
+#
+# Kolay yol -- install.sh dogru mutlak yolu kendisi yazar:
+#   ./scripts/install.sh --autostart
+#
+# Elle kopyalayacaksan Exec satirindaki YOL'u kendi mutlak yolunla degistir;
+# .desktop dosyalari ~ veya %h gibi kisayollari desteklemez:
+#   sed "s|YOL|$HOME/.local/bin/whatsapp|" \
+#     packaging/whatsapp-for-linux-autostart.desktop > ~/.config/autostart/whatsapp-for-linux.desktop
+[Desktop Entry]
+Type=Application
+Name=WhatsApp for Linux
+Exec=YOL
+Icon=whatsapp-for-linux
+Terminal=false
+X-GNOME-Autostart-enabled=true
